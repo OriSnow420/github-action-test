@@ -1,0 +1,18 @@
+name: Test Python Files # The name of the workflow
+
+on: [push] # A push is an event. The workflow will be triggered automatically
+           # when there is a push on the repository.
+
+jobs:      # Defining the jobs of the workflow
+  build:   # The name of the job is "build"
+    runs-on: ubuntu-latest # Specify the runner of the job
+    steps: # In yaml files, a dash means the start of a new item.
+      - uses: actions/checkout@v4 # This step uses an action, cloning the code
+                                # in the repository to the runner
+      - name: Set up Python       # This is another step
+        uses: actions/setup-python@v5 # And uses another action to setup python
+        with:
+        python-version: 3.12    # This action accepts input, specified with
+                                # the word "with".
+      - name: Running tests
+        run: python -m unittest   # Another step, runs command

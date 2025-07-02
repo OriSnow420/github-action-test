@@ -12,7 +12,7 @@ jobs:      # Defining the jobs of the workflow
       - name: Set up Python       # This is another step
         uses: actions/setup-python@v5 # And uses another action to setup python
         with:
-        python-version: 3.12    # This action accepts input, specified with
+          python-version: 3.12    # This action accepts input, specified with
                                 # the word "with".
       - name: Running tests
         run: python -m unittest   # Another step, runs command
